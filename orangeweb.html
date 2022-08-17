@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .cont {
+            display: grid;
+
+            grid-template-columns: repeat(10, 1fr);
+
+            width: 100%;
+
+           
+        }
+
+        .img {
+            grid-column: 1/4;
+        }
+
+        hr {
+            border-width: 3px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 800px;
+        }
+
+        .sec {
+            grid-column: 4/11;
+        }
+
+        .small {
+            height: 80px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cont">
+        <div id="carouselExampleControls" class="carousel slide img" data-ride="carousel">
+            <div class="carousel-inner ">
+                <div class="carousel-item active ">
+                    <img class="d-block w-100" src="https://orangecodingacademy.com/assets/img/1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item ">
+                    <img class="d-block w-100"
+                        src="https://cdn.discordapp.com/attachments/1008655555943993364/1008655749083299840/j2.jpg"
+                        alt="Second slide">
+                </div>
+           
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div class="sec">
+            <nav class="navbar navbar-expand-sm">
+                <div class="container">
+
+                    <div class="col-sm-3 px-3"> <img class="small"
+                            src="https://orangecodingacademy.com/assets/boosted/dist/img/white.png">
+
+                    </div>
+                    <ul class="nav justify-content-end navbar-expand-lg">
+                        <li class="nav-item">
+                            <a class="nav-link disabled" disabled aria-current="page" href="#">help</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">terms&conditions</a>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+            </nav>
+            <hr>
+            <div>
+
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-5">
+                        <h1 style="text-align:center">Create an account</h1><br>
+
+                        <form id="form" action="#" method="get" name="first" onsubmit="valid()">
+                            <div class="mb-3">
+                                <label for="Email1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" name="email" id="Email1"
+                                    aria-describedby="emailHelp">
+                                <div id="emailt" class="form-text" style="color:red">
+
+                                </div>
+                                eg: username@domain.com
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Mobile</label>
+                                <input type="text" class="form-control" maxlength="10" name="number"
+                                    id="phone1">
+
+                                <div id="mobilet" class="form-text" style="color:red">
+
+                                </div>
+                                eg: 077********
+                                <div class="mb-3 mt-3">
+                                    <label for="Password1" class="form-label">Password </label>
+                                    <input type="password" class="form-control" name="password"
+                                        id="Password1">
+                                    <div id="passt" class="form-text2" style="color:red">
+
+
+                                    </div>
+                                    The Password should be between 6-18 characters.
+                                </div>
+                                <div class="mb-2 form-check" >
+                                    <input type="checkbox" class="form-check-input" id="Check1">
+                                    <label class="form-check-label" for="Check1" >I agree to the terms &
+                                        conditions Orange</label>
+                                </div>
+                                <div id="checkt" style="margin:0% " style="color:red"></div>
+                                <div class="mb-3 mt-1 form-check" >
+                                    <input type="checkbox" class="form-check-input" id="Check2" checked>
+                                    <label class="form-check-label" for="exampleCheck1">Receive Coding Academy
+                                        Newsletter.</label>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" onclick="valid()" style="background-color:#ff7900;"
+                                        class="btn  btn-block">sign
+                                        up</button><br>
+                                    <button type="submit" class="btn btn-outline-dark btn-block"> Already have an
+                                        account</button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function valid() {
+            var email = document.getElementById("Email1").value
+            var phone = document.getElementById("phone1").value
+            var password = document.getElementById("Password1").value
+            var check = document.getElementById("Check1").value
+            var message1 = document.getElementById("emailt")
+            var message2 = document.getElementById("mobilet")
+            var message3 = document.getElementById("passt")
+            var message4 = document.getElementById("checkt")
+
+        
+
+            if (email == "") {
+                message1.innerHTML = "**The email must be a valid email address."
+            
+                document.getElementById("Email1").style.border = "2px solid red"
+            }
+            if (phone.length !== 10) {
+                document.getElementById("phone1").style.border = "2px solid red"
+                message2.innerHTML = "**you have to enter at least 10 digit!"
+
+            }
+            if (password.length < 6 ) {
+                message3.innerHTML = "**The password field is required."
+                
+                document.getElementById("Password1").style.border = "2px solid red"}
+            if ( password.length > 18) {
+                message3.innerHTML = "less"
+            
+                document.getElementById("Password1").style.border = "2px solid red"}
+                if (password.length > 6 && password.length < 18){
+                    message3.innerHTML = "good"}
+            
+            if (check !== "checked") {
+                message4.innerHTML = "**The Terms & Conditions Not Checked"
+                
+                document.getElementById("Check1").style.border = "2px solid red"
+            }
+
+        }
+
+        if (email !== "" && password.length > 6 && password.length < 18) {
+        
+
+            let array_form = []
+
+            
+            if (localStorage["users"] !== undefined){
+                
+            array_form = JSON.parse(localStorage.getItem("users")) 
+
+            }
+
+            let user = {"email" : email , "password" : password}
+
+            array_form.push(user)
+
+            localStorage.setItem("users" ,JSON.stringify(array_form))
+            
+
+            }
+        
+
+
+
+    </script>
+
+    </script>
+</body>
+</html>
